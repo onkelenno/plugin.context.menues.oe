@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.context.menues.oe" name="Context Menues OE" version="0.0.1" provider-name="onkel_enno">
+<addon id="plugin.context.menues.oe" name="Context Menues OE" version="0.0.3" provider-name="onkel_enno">
     <extension point="kodi.context.item">
         <menu id="kodi.core.main">
             <item library="deleteItem.py">
                 <label>Aus Bibliothek entfernen</label>
                 <!-- <label>646</label> -->
+                <visible>[String.IsEqual(ListItem.DBTYPE,video) | String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
+            </item>
+            <item library="toggleWatched.py">
+                <label>„gesehen“ umschalten</label>
+                <!-- <label>16103</label> -->
                 <visible>[String.IsEqual(ListItem.DBTYPE,video) | String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode)]</visible>
             </item>
         </menu>
